@@ -5,23 +5,22 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
-import { MDBBtn, MDBCard, MDBCardBody,  MDBInput, MDBCol, MDBRow } from "mdbreact";
+import { MDBBtn, MDBCard, MDBCardBody, MDBInput, MDBCol, MDBRow } from "mdbreact";
 
-import Layout from '../components/Layout';
+import Layout from '../../../../components/Layout';
 
-const Index = () => (
+const AddUser = () => (
   <React.Fragment>
     <Layout>
-    <MDBRow className="mt-5">
-        <MDBCol md="6" className="mx-auto">
+      <MDBRow className="mt-4">
+        <MDBCol md='10' className="mx-auto">
           <MDBCard>
             <MDBCardBody>
               <form>
-                <p className="h5 text-center mb-4">Login</p>
+                <h1 className="mb-4">New User</h1>
                 <div className="grey-text">
                   <MDBInput
                     label="Username"
-                    icon="user"
                     group
                     type="text"
                     validate
@@ -30,24 +29,29 @@ const Index = () => (
                   />
                   <MDBInput
                     label="Password"
-                    icon="lock"
+                    group
+                    type="password"
+                    validate
+                  />
+                  <MDBInput
+                    label="Password confirmation"
                     group
                     type="password"
                     validate
                   />
                 </div>
-                <div className="text-center">
-                  <Link href="/admin">
-                    <MDBBtn color="dark-green" size="sm">Login</MDBBtn>
-                  </Link>
-                </div>
               </form>
             </MDBCardBody>
           </MDBCard>
+          <div className="text-center mt-4">
+            <Link href="/admin/auth/user/users">
+              <MDBBtn color="blue-grey" type="submit">Add User</MDBBtn>
+            </Link>
+          </div>
         </MDBCol>
       </MDBRow>
     </Layout>
   </React.Fragment>
-)
+);
 
-export default Index;
+export default AddUser;
